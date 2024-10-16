@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Syncfusion.Windows.Forms.Gauge.Range range6 = new Syncfusion.Windows.Forms.Gauge.Range();
-            Syncfusion.Windows.Forms.Gauge.Range range7 = new Syncfusion.Windows.Forms.Gauge.Range();
-            Syncfusion.Windows.Forms.Gauge.Range range8 = new Syncfusion.Windows.Forms.Gauge.Range();
-            Syncfusion.Windows.Forms.Gauge.Range range9 = new Syncfusion.Windows.Forms.Gauge.Range();
-            Syncfusion.Windows.Forms.Gauge.Range range10 = new Syncfusion.Windows.Forms.Gauge.Range();
+            Syncfusion.Windows.Forms.Gauge.Range range1 = new Syncfusion.Windows.Forms.Gauge.Range();
+            Syncfusion.Windows.Forms.Gauge.Range range2 = new Syncfusion.Windows.Forms.Gauge.Range();
+            Syncfusion.Windows.Forms.Gauge.Range range3 = new Syncfusion.Windows.Forms.Gauge.Range();
+            Syncfusion.Windows.Forms.Gauge.Range range4 = new Syncfusion.Windows.Forms.Gauge.Range();
+            Syncfusion.Windows.Forms.Gauge.Range range5 = new Syncfusion.Windows.Forms.Gauge.Range();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.fluidTempetureGauge = new Syncfusion.Windows.Forms.Gauge.RadialGauge();
             this.rjEnergyLogo = new System.Windows.Forms.PictureBox();
             this.undLogo = new System.Windows.Forms.PictureBox();
+            this.TestButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.rjEnergyLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.undLogo)).BeginInit();
             this.SuspendLayout();
@@ -68,46 +69,46 @@
             this.fluidTempetureGauge.NeedleStyle = Syncfusion.Windows.Forms.Gauge.NeedleStyle.Advanced;
             this.fluidTempetureGauge.OuterFrameGradientEndColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(35)))), ((int)(((byte)(36)))));
             this.fluidTempetureGauge.OuterFrameGradientStartColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(49)))), ((int)(((byte)(50)))));
-            range6.Color = System.Drawing.Color.Red;
-            range6.EndValue = 36F;
-            range6.Height = 5;
-            range6.InRange = false;
-            range6.Name = "FreezingRange";
-            range6.RangePlacement = Syncfusion.Windows.Forms.Gauge.TickPlacement.Inside;
-            range6.StartValue = 0F;
-            range7.Color = System.Drawing.Color.Yellow;
-            range7.EndValue = 50F;
-            range7.Height = 5;
-            range7.InRange = true;
-            range7.Name = "Low Warning Range";
-            range7.RangePlacement = Syncfusion.Windows.Forms.Gauge.TickPlacement.Inside;
-            range7.StartValue = 36F;
-            range8.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
-            range8.EndValue = 60F;
-            range8.Height = 5;
-            range8.InRange = false;
-            range8.Name = "GoodRange";
-            range8.RangePlacement = Syncfusion.Windows.Forms.Gauge.TickPlacement.Inside;
-            range8.StartValue = 50F;
-            range9.Color = System.Drawing.Color.Yellow;
-            range9.EndValue = 80F;
-            range9.Height = 5;
-            range9.InRange = false;
-            range9.Name = "High Warning Range";
-            range9.RangePlacement = Syncfusion.Windows.Forms.Gauge.TickPlacement.Inside;
-            range9.StartValue = 60F;
-            range10.Color = System.Drawing.Color.Red;
-            range10.EndValue = 120F;
-            range10.Height = 5;
-            range10.InRange = false;
-            range10.Name = "MeltDown";
-            range10.RangePlacement = Syncfusion.Windows.Forms.Gauge.TickPlacement.Inside;
-            range10.StartValue = 80F;
-            this.fluidTempetureGauge.Ranges.Add(range6);
-            this.fluidTempetureGauge.Ranges.Add(range7);
-            this.fluidTempetureGauge.Ranges.Add(range8);
-            this.fluidTempetureGauge.Ranges.Add(range9);
-            this.fluidTempetureGauge.Ranges.Add(range10);
+            range1.Color = System.Drawing.Color.Red;
+            range1.EndValue = 36F;
+            range1.Height = 5;
+            range1.InRange = false;
+            range1.Name = "FreezingRange";
+            range1.RangePlacement = Syncfusion.Windows.Forms.Gauge.TickPlacement.Inside;
+            range1.StartValue = 0F;
+            range2.Color = System.Drawing.Color.Yellow;
+            range2.EndValue = 50F;
+            range2.Height = 5;
+            range2.InRange = true;
+            range2.Name = "Low Warning Range";
+            range2.RangePlacement = Syncfusion.Windows.Forms.Gauge.TickPlacement.Inside;
+            range2.StartValue = 36F;
+            range3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
+            range3.EndValue = 60F;
+            range3.Height = 5;
+            range3.InRange = false;
+            range3.Name = "GoodRange";
+            range3.RangePlacement = Syncfusion.Windows.Forms.Gauge.TickPlacement.Inside;
+            range3.StartValue = 50F;
+            range4.Color = System.Drawing.Color.Yellow;
+            range4.EndValue = 80F;
+            range4.Height = 5;
+            range4.InRange = false;
+            range4.Name = "High Warning Range";
+            range4.RangePlacement = Syncfusion.Windows.Forms.Gauge.TickPlacement.Inside;
+            range4.StartValue = 60F;
+            range5.Color = System.Drawing.Color.Red;
+            range5.EndValue = 120F;
+            range5.Height = 5;
+            range5.InRange = false;
+            range5.Name = "MeltDown";
+            range5.RangePlacement = Syncfusion.Windows.Forms.Gauge.TickPlacement.Inside;
+            range5.StartValue = 80F;
+            this.fluidTempetureGauge.Ranges.Add(range1);
+            this.fluidTempetureGauge.Ranges.Add(range2);
+            this.fluidTempetureGauge.Ranges.Add(range3);
+            this.fluidTempetureGauge.Ranges.Add(range4);
+            this.fluidTempetureGauge.Ranges.Add(range5);
             this.fluidTempetureGauge.ScaleLabelColor = System.Drawing.Color.White;
             this.fluidTempetureGauge.ShowTicks = true;
             this.fluidTempetureGauge.Size = new System.Drawing.Size(273, 273);
@@ -138,11 +139,22 @@
             this.undLogo.TabIndex = 2;
             this.undLogo.TabStop = false;
             // 
+            // TestButton
+            // 
+            this.TestButton.Location = new System.Drawing.Point(139, 395);
+            this.TestButton.Name = "TestButton";
+            this.TestButton.Size = new System.Drawing.Size(129, 31);
+            this.TestButton.TabIndex = 3;
+            this.TestButton.Text = "Test Email Alert";
+            this.TestButton.UseVisualStyleBackColor = true;
+            this.TestButton.Click += new System.EventHandler(this.TestButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.TestButton);
             this.Controls.Add(this.undLogo);
             this.Controls.Add(this.fluidTempetureGauge);
             this.Controls.Add(this.rjEnergyLogo);
@@ -159,6 +171,7 @@
         private Syncfusion.Windows.Forms.Gauge.RadialGauge fluidTempetureGauge;
         private System.Windows.Forms.PictureBox rjEnergyLogo;
         private System.Windows.Forms.PictureBox undLogo;
+        private System.Windows.Forms.Button TestButton;
     }
 }
 

@@ -16,5 +16,10 @@ namespace CSCI492OnsiteMonitor
         {
             InitializeComponent();
         }
+
+        private void TestButton_Click(object sender, EventArgs e)
+        {
+            SendEmailAlert.alertEmail();
+        }
     }
 }
