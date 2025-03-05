@@ -85,5 +85,10 @@ namespace CSCI492OnsiteMonitor
         {
 
         }
+
+        private void radialGauge5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
