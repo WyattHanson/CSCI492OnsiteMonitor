@@ -14,6 +14,9 @@ namespace CSCI492OnsiteMonitor
         [STAThread]
         static void Main()
         {
+            //SyncFusion License
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NDaF5cWGFCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdmWXxedXZXRmBdUEBzX0s=");
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MonitorPage());

@@ -15,10 +15,11 @@ namespace CSCI492OnsiteMonitor
         {
             var client = new SmtpClient("live.smtp.mailtrap.io", 587)
             {
-                Credentials = new NetworkCredential("api", "544bd8a957b11eeb85328821a1c90036"),
+                Credentials = new NetworkCredential("api", "804a1038ef9b4f1685d97f26c1b65dff"),
                 EnableSsl = true
             };
-            client.Send("hello@demomailtrap.com", "wyattjeh@gmail.com", "Hello world", "testbody");
+            
+            client.Send("hello@demomailtrap.co", "onsitemonitoralert@gmail.com", "The system is ON FIRE!!!", "Yup, automatically turning of the system. The heat has began to get to over 5,000 degrees.");
             System.Console.WriteLine("Sent");
         }
     }
