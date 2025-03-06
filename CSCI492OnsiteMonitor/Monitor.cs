@@ -90,5 +90,10 @@ namespace CSCI492OnsiteMonitor
         {
 
         }
+
+        private void pumpSpeedGaugeLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
