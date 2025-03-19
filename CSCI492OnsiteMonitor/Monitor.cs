@@ -14,10 +14,12 @@ namespace CSCI492OnsiteMonitor
     public partial class MonitorPage : Form
     {
         private System.Timers.Timer _timer;
+        private System.Timers.Timer _messageTimer;
         public MonitorPage()
         {
             InitializeComponent();
             SetupTimer();
+            SetupMessageTimer();
         }
         private void SetupTimer()
         {
@@ -41,7 +43,32 @@ namespace CSCI492OnsiteMonitor
                 radialGaugeFryerTempOut.Value = InputDataMaker.ChangeData("Test");
             }));
         }
+        private void SetupMessageTimer()
+        {
+            _messageTimer = new System.Timers.Timer(1000); //60000
+            _messageTimer.Elapsed += (s, e) => UpdateMessage();
+            _messageTimer.Start();
+        }
+        private void UpdateMessage()
+        {
+            Invoke(new Action(() =>
+            {
+                // Setup for Testing Specifically with random data but can be changed in InputDataMaker
+                // Get current text (if any)
+                string[] lines = messageBox.Text.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
 
+                // Update first line, preserve the rest
+                string updatedText = "Current Time: " + DateTime.Now.ToString("G");
+                if (lines.Length > 1)
+                {
+                    updatedText += Environment.NewLine + string.Join(Environment.NewLine, lines.Skip(1));
+                }
+
+                messageBox.Text = updatedText;
+            }));
+        }
+
+        //For manual Testing of Email Alerts
         private void TestButton_Click(object sender, EventArgs e)
         {
             SendEmailAlert.alertEmail();
