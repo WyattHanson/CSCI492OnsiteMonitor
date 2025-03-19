@@ -19,7 +19,7 @@ namespace CSCI492OnsiteMonitor
                 EnableSsl = true
             };
             
-            client.Send("hello@demomailtrap.co", "onsitemonitoralert@gmail.com", "The system is ON FIRE!!!", "Yup, automatically turning of the system. The heat has began to get to over 5,000 degrees.");
+            client.Send("hello@demomailtrap.co", "onsitemonitoralert@gmail.com", "The system is ON FIRE!!!", "Yup, automatically turning off the system. The heat has began to get to over 5,000 degrees.");
             System.Console.WriteLine("Sent");
         }
     }
