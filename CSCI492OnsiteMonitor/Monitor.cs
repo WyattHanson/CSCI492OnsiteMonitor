@@ -7,14 +7,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Timers;
 
 namespace CSCI492OnsiteMonitor
 {
     public partial class MonitorPage : Form
     {
+        private System.Timers.Timer _timer;
         public MonitorPage()
         {
             InitializeComponent();
+            SetupTimer();
+        }
+        private void SetupTimer()
+        {
+            _timer = new System.Timers.Timer(500); // .5 seconds interval for checks
+            _timer.Elapsed += UpdateGaugeValue;
+            _timer.AutoReset = true;
+            _timer.Start();
+        }
+        private void UpdateGaugeValue(object sender, ElapsedEventArgs e)
+        {
+            Invoke(new Action(() =>
+            {
+                // Setup for Testing Specifically with random data but can be changed in InputDataMaker
+                radialGaugeFluidPressure.Value = InputDataMaker.ChangeData("Test");
+                radialGaugePumpSpeed.Value = InputDataMaker.ChangeData("Test");
+                radialGaugeHotTempIn.Value = InputDataMaker.ChangeData("Test");
+                radialGaugeHotTempOut.Value = InputDataMaker.ChangeData("Test");
+                radialGaugeColdTempIn.Value = InputDataMaker.ChangeData("Test");
+                radialGaugeColdTempOut.Value = InputDataMaker.ChangeData("Test");
+                radialGaugeFryerTempIn.Value = InputDataMaker.ChangeData("Test");
+                radialGaugeFryerTempOut.Value = InputDataMaker.ChangeData("Test");
+            }));
         }
 
         private void TestButton_Click(object sender, EventArgs e)
