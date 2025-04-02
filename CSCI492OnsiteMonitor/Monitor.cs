@@ -14,16 +14,16 @@ namespace CSCI492OnsiteMonitor
     public partial class MonitorPage : Form
     {
         private System.Timers.Timer _timer;
-        private System.Timers.Timer _messageTimer;
+        //private System.Timers.Timer _messageTimer;
         public MonitorPage()
         {
             InitializeComponent();
             SetupTimer();
-            SetupMessageTimer();
+            //SetupMessageTimer();
         }
         private void SetupTimer()
         {
-            _timer = new System.Timers.Timer(500); // .5 seconds interval for checks
+            _timer = new System.Timers.Timer(1000); // 1 seconds interval for checks
             _timer.Elapsed += UpdateGaugeValue;
             _timer.AutoReset = true;
             _timer.Start();
@@ -41,18 +41,28 @@ namespace CSCI492OnsiteMonitor
                 radialGaugeColdTempOut.Value = InputDataMaker.ChangeData("Test");
                 radialGaugeFryerTempIn.Value = InputDataMaker.ChangeData("Test");
                 radialGaugeFryerTempOut.Value = InputDataMaker.ChangeData("Test");
+                UpdateMessage();
             }));
         }
+        /*
+        //Testing of Message Timer
         private void SetupMessageTimer()
         {
             _messageTimer = new System.Timers.Timer(1000); //60000
             _messageTimer.Elapsed += (s, e) => UpdateMessage();
             _messageTimer.Start();
         }
+        */
         private void UpdateMessage()
         {
             Invoke(new Action(() =>
             {
+                //Testing the update message
+                if (radialGaugeFluidPressure.Value >= 0)
+                {
+                    messageBox.Text += Environment.NewLine+ DateTime.Now.ToString("G")+": Danger, Fluid Pressure Critical";
+                }
+                int sizeOfMessageBox = 0;
                 // Setup for Testing Specifically with random data but can be changed in InputDataMaker
                 // Get current text (if any)
                 string[] lines = messageBox.Text.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
@@ -62,10 +72,24 @@ namespace CSCI492OnsiteMonitor
                 if (lines.Length > 1)
                 {
                     updatedText += Environment.NewLine + string.Join(Environment.NewLine, lines.Skip(1));
+                    if (lines.Length > 21)
+                    {
+                        string longrun = "Current Time: " + DateTime.Now.ToString("G") + Environment.NewLine + string.Join(Environment.NewLine, lines.Skip(lines.Count() - 20));
+                        messageBox.Text = longrun;
+                    }
+                    else
+                    {
+                        messageBox.Text = updatedText;
+                    }
                 }
-
-                messageBox.Text = updatedText;
             }));
+        }
+        private void checkGauges()
+        {
+            if (radialGaugeFluidPressure.Value >= 0)
+            {
+                messageBox.Text = messageBox.Text + "\nDanger, Fluid Pressure Critical";
+            }
         }
 
         //For manual Testing of Email Alerts

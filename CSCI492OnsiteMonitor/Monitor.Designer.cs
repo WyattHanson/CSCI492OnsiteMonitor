@@ -156,7 +156,6 @@ namespace CSCI492OnsiteMonitor
             messageBox.Name = "messageBox";
             messageBox.Size = new System.Drawing.Size(256, 328);
             messageBox.TabIndex = 15;
-            messageBox.Text = "2/5/2025 12:00:00 AM";
             // 
             // label1
             // 
@@ -1018,7 +1017,6 @@ namespace CSCI492OnsiteMonitor
         private Syncfusion.Windows.Forms.Gauge.RadialGauge radialGaugeHotTempOut;
         private System.Windows.Forms.Panel panel7;
         private Syncfusion.Windows.Forms.Gauge.RadialGauge radialGaugeColdTempOut;
-        private System.Windows.Forms.Label messageBox;
         private System.Windows.Forms.Label fluidPressureGaugeLabel;
         private System.Windows.Forms.Panel panel1;
         private Syncfusion.Windows.Forms.Gauge.RadialGauge radialGaugeFluidPressure;
@@ -1033,6 +1031,7 @@ namespace CSCI492OnsiteMonitor
         private Syncfusion.Windows.Forms.Gauge.RadialGauge radialGaugeFryerTempOut;
         private System.Windows.Forms.Panel panel9;
         private Syncfusion.Windows.Forms.Gauge.RadialGauge radialGaugeFryerTempIn;
+        private System.Windows.Forms.Label messageBox;
     }
 }
 
