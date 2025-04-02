@@ -18,7 +18,7 @@ namespace CSCI492OnsiteMonitor
             {
                 Random rnd = new Random();
                 int min = 58; // Lower bound (inclusive)
-                int max = 75; // Upper bound (exclusive)
+                int max = 85; // Upper bound (exclusive)
 
                 return rnd.Next(min, max);
             }

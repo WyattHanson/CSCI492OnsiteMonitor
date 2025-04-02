@@ -58,10 +58,7 @@ namespace CSCI492OnsiteMonitor
             Invoke(new Action(() =>
             {
                 //Testing the update message
-                if (radialGaugeFluidPressure.Value >= 0)
-                {
-                    messageBox.Text += Environment.NewLine+ DateTime.Now.ToString("G")+": Danger, Fluid Pressure Critical";
-                }
+                checkGauges();
                 int sizeOfMessageBox = 0;
                 // Setup for Testing Specifically with random data but can be changed in InputDataMaker
                 // Get current text (if any)
@@ -86,9 +83,124 @@ namespace CSCI492OnsiteMonitor
         }
         private void checkGauges()
         {
-            if (radialGaugeFluidPressure.Value >= 0)
+            if (radialGaugeFluidPressure.Value < 80 &&
+            radialGaugePumpSpeed.Value < 80 &&
+            radialGaugeHotTempIn.Value < 80 &&
+            radialGaugeHotTempOut.Value < 80 &&
+            radialGaugeColdTempIn.Value < 80 &&
+            radialGaugeColdTempOut.Value < 80 &&
+            radialGaugeFryerTempIn.Value < 80 &&
+            radialGaugeFryerTempOut.Value < 80)
             {
-                messageBox.Text = messageBox.Text + "\nDanger, Fluid Pressure Critical";
+                systemHealthIndicator.Image = Properties.Resources.Good;
+            }
+            else
+            {
+                if (radialGaugeFluidPressure.Value >= 80)
+                {
+                    if (radialGaugeFluidPressure.Value >= 100)
+                    {
+                        messageBox.Text += Environment.NewLine + DateTime.Now.ToString("G") + ": Danger, Fluid Pressure Critical";
+                        systemHealthIndicator.Image = Properties.Resources.Failure;
+                    }
+                    else
+                    {
+                        messageBox.Text += Environment.NewLine + DateTime.Now.ToString("G") + ": Warning, Fluid Pressure High";
+                        systemHealthIndicator.Image = Properties.Resources.Warning;
+                    }
+                }
+                if (radialGaugePumpSpeed.Value >= 80)
+                {
+                    if (radialGaugePumpSpeed.Value >= 100)
+                    {
+                        messageBox.Text += Environment.NewLine + DateTime.Now.ToString("G") + ": Danger, Pump Speed Critical";
+                        systemHealthIndicator.Image = Properties.Resources.Failure;
+                    }
+                    else
+                    {
+                        messageBox.Text += Environment.NewLine + DateTime.Now.ToString("G") + ": Warning, Pump Speed High";
+                        systemHealthIndicator.Image = Properties.Resources.Warning;
+                    }
+                }
+                if (radialGaugeHotTempIn.Value >= 80)
+                {
+                    if (radialGaugeHotTempIn.Value >= 100)
+                    {
+                        messageBox.Text += Environment.NewLine + DateTime.Now.ToString("G") + ": Danger, Hot Temp In Critical";
+                        systemHealthIndicator.Image = Properties.Resources.Failure;
+                    }
+                    else
+                    {
+                        messageBox.Text += Environment.NewLine + DateTime.Now.ToString("G") + ": Warning, Hot Temp In High";
+                        systemHealthIndicator.Image = Properties.Resources.Warning;
+                    }
+                }
+                if (radialGaugeHotTempOut.Value >= 80)
+                {
+                    if (radialGaugeHotTempOut.Value >= 100)
+                    {
+                        messageBox.Text += Environment.NewLine + DateTime.Now.ToString("G") + ": Danger, Hot Temp Out Critical";
+                        systemHealthIndicator.Image = Properties.Resources.Failure;
+                    }
+                    else
+                    {
+                        messageBox.Text += Environment.NewLine + DateTime.Now.ToString("G") + ": Warning, Hot Temp Out High";
+                        systemHealthIndicator.Image = Properties.Resources.Warning;
+                    }
+                }
+                //
+                if (radialGaugeColdTempIn.Value >= 80)
+                {
+                    if (radialGaugeColdTempIn.Value >= 100)
+                    {
+                        messageBox.Text += Environment.NewLine + DateTime.Now.ToString("G") + ": Danger, Cold Temp In Critical";
+                        systemHealthIndicator.Image = Properties.Resources.Failure;
+                    }
+                    else
+                    {
+                        messageBox.Text += Environment.NewLine + DateTime.Now.ToString("G") + ": Warning, Cold Temp In High";
+                        systemHealthIndicator.Image = Properties.Resources.Warning;
+                    }
+                }
+                if (radialGaugeColdTempOut.Value >= 80)
+                {
+                    if (radialGaugeColdTempOut.Value >= 100)
+                    {
+                        messageBox.Text += Environment.NewLine + DateTime.Now.ToString("G") + ": Danger, Cold Temp Out Critical";
+                        systemHealthIndicator.Image = Properties.Resources.Failure;
+                    }
+                    else
+                    {
+                        messageBox.Text += Environment.NewLine + DateTime.Now.ToString("G") + ": Warning, Cold Temp Out High";
+                        systemHealthIndicator.Image = Properties.Resources.Warning;
+                    }
+                }
+                if (radialGaugeFryerTempIn.Value >= 80)
+                {
+                    if (radialGaugeFryerTempIn.Value >= 100)
+                    {
+                        messageBox.Text += Environment.NewLine + DateTime.Now.ToString("G") + ": Danger, Fryer Temp In Critical";
+                        systemHealthIndicator.Image = Properties.Resources.Failure;
+                    }
+                    else
+                    {
+                        messageBox.Text += Environment.NewLine + DateTime.Now.ToString("G") + ": Warning, Fryer Temp Out High";
+                        systemHealthIndicator.Image = Properties.Resources.Warning;
+                    }
+                }
+                if (radialGaugeFryerTempOut.Value >= 80)
+                {
+                    if (radialGaugeFryerTempOut.Value >= 100)
+                    {
+                        messageBox.Text += Environment.NewLine + DateTime.Now.ToString("G") + ": Danger, Fryer Temp Out Critical";
+                        systemHealthIndicator.Image = Properties.Resources.Failure;
+                    }
+                    else
+                    {
+                        messageBox.Text += Environment.NewLine + DateTime.Now.ToString("G") + ": Warning, Fryer Temp In  High";
+                        systemHealthIndicator.Image = Properties.Resources.Warning;
+                    }
+                }
             }
         }
 
