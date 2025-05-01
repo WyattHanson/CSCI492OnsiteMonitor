@@ -332,7 +332,7 @@ namespace CSCI492OnsiteMonitor
             range1.Color = System.Drawing.Color.FromArgb(0, 255, 0);
             range1.EndValue = 80F;
             range1.Height = 5;
-            range1.InRange = false;
+            range1.InRange = true;
             range1.Name = "GaugeRange1";
             range1.RangePlacement = Syncfusion.Windows.Forms.Gauge.TickPlacement.OutSide;
             range1.StartValue = 0F;
@@ -358,6 +358,7 @@ namespace CSCI492OnsiteMonitor
             radialGaugePumpSpeed.StartAngle = 180;
             radialGaugePumpSpeed.SweepAngle = 90;
             radialGaugePumpSpeed.TabIndex = 10;
+            radialGaugePumpSpeed.Value = 50F;
             radialGaugePumpSpeed.Click += radialGauge1_Click;
             // 
             // panel3
@@ -408,7 +409,7 @@ namespace CSCI492OnsiteMonitor
             range4.Color = System.Drawing.Color.FromArgb(0, 255, 0);
             range4.EndValue = 80F;
             range4.Height = 5;
-            range4.InRange = false;
+            range4.InRange = true;
             range4.Name = "GaugeRange1";
             range4.RangePlacement = Syncfusion.Windows.Forms.Gauge.TickPlacement.OutSide;
             range4.StartValue = 0F;
@@ -434,6 +435,7 @@ namespace CSCI492OnsiteMonitor
             radialGaugeHotTempOut.StartAngle = 180;
             radialGaugeHotTempOut.SweepAngle = 90;
             radialGaugeHotTempOut.TabIndex = 10;
+            radialGaugeHotTempOut.Value = 50F;
             radialGaugeHotTempOut.Click += radialGauge5_Click;
             // 
             // radialGauge2
@@ -518,7 +520,7 @@ namespace CSCI492OnsiteMonitor
             range10.Color = System.Drawing.Color.FromArgb(0, 255, 0);
             range10.EndValue = 80F;
             range10.Height = 5;
-            range10.InRange = false;
+            range10.InRange = true;
             range10.Name = "GaugeRange1";
             range10.RangePlacement = Syncfusion.Windows.Forms.Gauge.TickPlacement.OutSide;
             range10.StartValue = 0F;
@@ -544,6 +546,7 @@ namespace CSCI492OnsiteMonitor
             radialGaugeHotTempIn.StartAngle = 180;
             radialGaugeHotTempIn.SweepAngle = 90;
             radialGaugeHotTempIn.TabIndex = 10;
+            radialGaugeHotTempIn.Value = 50F;
             radialGaugeHotTempIn.Click += radialGauge3_Click_1;
             // 
             // panel5
@@ -605,7 +608,7 @@ namespace CSCI492OnsiteMonitor
             radialGaugeColdTempIn.StartAngle = 180;
             radialGaugeColdTempIn.SweepAngle = 90;
             radialGaugeColdTempIn.TabIndex = 10;
-            radialGaugeColdTempIn.Value = 1F;
+            radialGaugeColdTempIn.Value = 50F;
             // 
             // panel7
             // 
@@ -641,7 +644,7 @@ namespace CSCI492OnsiteMonitor
             range16.Color = System.Drawing.Color.FromArgb(0, 255, 0);
             range16.EndValue = 80F;
             range16.Height = 5;
-            range16.InRange = false;
+            range16.InRange = true;
             range16.Name = "GaugeRange1";
             range16.RangePlacement = Syncfusion.Windows.Forms.Gauge.TickPlacement.OutSide;
             range16.StartValue = 0F;
@@ -667,6 +670,7 @@ namespace CSCI492OnsiteMonitor
             radialGaugeColdTempOut.StartAngle = 180;
             radialGaugeColdTempOut.SweepAngle = 90;
             radialGaugeColdTempOut.TabIndex = 10;
+            radialGaugeColdTempOut.Value = 50F;
             // 
             // fluidPressureGaugeLabel
             // 
@@ -712,7 +716,7 @@ namespace CSCI492OnsiteMonitor
             range19.Color = System.Drawing.Color.FromArgb(0, 255, 0);
             range19.EndValue = 80F;
             range19.Height = 5;
-            range19.InRange = false;
+            range19.InRange = true;
             range19.Name = "GaugeRange1";
             range19.RangePlacement = Syncfusion.Windows.Forms.Gauge.TickPlacement.OutSide;
             range19.StartValue = 0F;
@@ -738,6 +742,7 @@ namespace CSCI492OnsiteMonitor
             radialGaugeFluidPressure.StartAngle = 180;
             radialGaugeFluidPressure.SweepAngle = 90;
             radialGaugeFluidPressure.TabIndex = 10;
+            radialGaugeFluidPressure.Value = 75F;
             radialGaugeFluidPressure.Click += radialGauge3_Click;
             // 
             // pumpSpeedGaugeLabel
@@ -853,7 +858,7 @@ namespace CSCI492OnsiteMonitor
             range22.Color = System.Drawing.Color.FromArgb(0, 255, 0);
             range22.EndValue = 80F;
             range22.Height = 5;
-            range22.InRange = false;
+            range22.InRange = true;
             range22.Name = "GaugeRange1";
             range22.RangePlacement = Syncfusion.Windows.Forms.Gauge.TickPlacement.OutSide;
             range22.StartValue = 0F;
@@ -879,6 +884,7 @@ namespace CSCI492OnsiteMonitor
             radialGaugeFryerTempOut.StartAngle = 180;
             radialGaugeFryerTempOut.SweepAngle = 90;
             radialGaugeFryerTempOut.TabIndex = 10;
+            radialGaugeFryerTempOut.Value = 50F;
             // 
             // panel9
             // 
@@ -913,7 +919,7 @@ namespace CSCI492OnsiteMonitor
             range25.Color = System.Drawing.Color.FromArgb(0, 255, 0);
             range25.EndValue = 80F;
             range25.Height = 5;
-            range25.InRange = false;
+            range25.InRange = true;
             range25.Name = "GaugeRange1";
             range25.RangePlacement = Syncfusion.Windows.Forms.Gauge.TickPlacement.OutSide;
             range25.StartValue = 0F;
@@ -939,6 +945,7 @@ namespace CSCI492OnsiteMonitor
             radialGaugeFryerTempIn.StartAngle = 180;
             radialGaugeFryerTempIn.SweepAngle = 90;
             radialGaugeFryerTempIn.TabIndex = 10;
+            radialGaugeFryerTempIn.Value = 50F;
             // 
             // MonitorPage
             // 

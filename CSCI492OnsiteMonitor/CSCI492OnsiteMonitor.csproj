@@ -11,6 +11,7 @@
     <PackageReference Include="MailKit" Version="4.8.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="MimeKit" Version="4.8.0" />
+    <PackageReference Include="MongoDB.Driver" Version="3.3.0" />
     <PackageReference Include="Syncfusion.Gauge.Windows" Version="27.1.52" />
     <PackageReference Include="Syncfusion.Grid.Windows" Version="27.1.52" />
     <PackageReference Include="Syncfusion.Licensing" Version="27.1.52" />

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Timers;
+using MongoDB.Bson;
+using MongoDB.Driver;
 
 namespace CSCI492OnsiteMonitor
 {
@@ -33,14 +35,14 @@ namespace CSCI492OnsiteMonitor
             Invoke(new Action(() =>
             {
                 // Setup for Testing Specifically with random data but can be changed in InputDataMaker
-                radialGaugeFluidPressure.Value = InputDataMaker.ChangeData("Test");
-                radialGaugePumpSpeed.Value = InputDataMaker.ChangeData("Test");
-                radialGaugeHotTempIn.Value = InputDataMaker.ChangeData("Test");
-                radialGaugeHotTempOut.Value = InputDataMaker.ChangeData("Test");
-                radialGaugeColdTempIn.Value = InputDataMaker.ChangeData("Test");
-                radialGaugeColdTempOut.Value = InputDataMaker.ChangeData("Test");
-                radialGaugeFryerTempIn.Value = InputDataMaker.ChangeData("Test");
-                radialGaugeFryerTempOut.Value = InputDataMaker.ChangeData("Test");
+                radialGaugeFluidPressure.Value = InputDataMaker.ChangeData("Error", radialGaugeFluidPressure.Value);
+                radialGaugePumpSpeed.Value = InputDataMaker.ChangeData("Test", radialGaugePumpSpeed.Value);
+                radialGaugeHotTempIn.Value = InputDataMaker.ChangeData("Test", radialGaugeHotTempIn.Value);
+                radialGaugeHotTempOut.Value = InputDataMaker.ChangeData("Test", radialGaugeHotTempOut.Value);
+                radialGaugeColdTempIn.Value = InputDataMaker.ChangeData("Test", radialGaugeColdTempIn.Value);
+                radialGaugeColdTempOut.Value = InputDataMaker.ChangeData("Test", radialGaugeColdTempOut.Value);
+                radialGaugeFryerTempIn.Value = InputDataMaker.ChangeData("Test", radialGaugeFryerTempIn.Value);
+                radialGaugeFryerTempOut.Value = InputDataMaker.ChangeData("Test", radialGaugeFryerTempOut.Value);
                 UpdateMessage();
             }));
         }
@@ -59,7 +61,6 @@ namespace CSCI492OnsiteMonitor
             {
                 //Testing the update message
                 checkGauges();
-                int sizeOfMessageBox = 0;
                 // Setup for Testing Specifically with random data but can be changed in InputDataMaker
                 // Get current text (if any)
                 string[] lines = messageBox.Text.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
@@ -147,8 +148,7 @@ namespace CSCI492OnsiteMonitor
                         messageBox.Text += Environment.NewLine + DateTime.Now.ToString("G") + ": Warning, Hot Temp Out High";
                         systemHealthIndicator.Image = Properties.Resources.Warning;
                     }
-                }
-                //
+                } 
                 if (radialGaugeColdTempIn.Value >= 80)
                 {
                     if (radialGaugeColdTempIn.Value >= 100)
